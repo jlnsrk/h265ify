@@ -1,12 +1,10 @@
 // Saves options to chrome.storage
 function save_options() {
   var enable = document.getElementById('enable').checked;
-  var block_60fps = document.getElementById('block_60fps').checked;
-  var battery_only = document.getElementById('battery_only').checked;
+  var log_req = document.getElementById('log_req').checked;
   chrome.storage.local.set({
     enable: enable,
-    block_60fps: block_60fps,
-    battery_only: battery_only,
+    log_req: log_req
   });
 }
 
@@ -19,8 +17,7 @@ function restore_options() {
     battery_only: false,
   }, function(options) {
     document.getElementById('enable').checked = options.enable;
-    document.getElementById('block_60fps').checked = options.block_60fps;
-    document.getElementById('battery_only').checked = options.battery_only;
+    document.getElementById('log_req').checked = options.block_60fps;
   });
 }
 

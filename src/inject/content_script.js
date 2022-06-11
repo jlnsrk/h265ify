@@ -27,14 +27,11 @@
 // script into the DOM.
 
 // Set defaults for options stored in localStorage
-if (localStorage['h264ify-enable'] === undefined) {
-  localStorage['h264ify-enable'] = true;
+if (localStorage['h265ify-enable'] === undefined) {
+  localStorage['h265ify-enable'] = true;
 }
-if (localStorage['h264ify-block_60fps'] === undefined) {
-  localStorage['h264ify-block_60fps'] = false;
-}
-if (localStorage['h264ify-battery_only'] === undefined) {
-  localStorage['h264ify-battery_only'] = false;
+if (localStorage['h265ify-log_req'] === undefined) {
+  localStorage['h265ify-log_req'] = false;
 }
 
 // Cache chrome.storage.local options in localStorage.
@@ -44,12 +41,10 @@ if (localStorage['h264ify-battery_only'] === undefined) {
 chrome.storage.local.get({
   // Set defaults
   enable: true,
-  block_60fps: false,
-  battery_only: false,
+  log_req: false,
  }, function(options) {
-   localStorage['h264ify-enable'] = options.enable;
-   localStorage['h264ify-block_60fps'] = options.block_60fps;
-   localStorage['h264ify-battery_only'] = options.battery_only;
+   localStorage['h265ify-enable'] = options.enable;
+   localStorage['h265ify-log_req'] = options.log_req;
  }
 );
 

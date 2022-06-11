@@ -22,21 +22,7 @@
  * SOFTWARE.
  */
 
-function inject () {
-  if (localStorage['h264ify-enable'] === 'false') {
-    return;
-  }
-
-  if (localStorage['h264ify-battery_only'] === 'true' && navigator.getBattery) {
-    navigator.getBattery().then(function(battery) {
-      if (!battery.charging) {
-        override();
-      }
-    })
-  } else {
-    override();
-  }
-
+ function inject () {
   function override() {
     // Override video element canPlayType() function
     var videoElem = document.createElement('video');
@@ -56,20 +42,20 @@ function inject () {
     // Check if a video type is allowed
     return function (type) {
       if (type === undefined) return '';
-      var disallowed_types = ['webm', 'vp8', 'vp9', 'av01'];
-      // If video type is in disallowed_types, say we don't support them
-      for (var i = 0; i < disallowed_types.length; i++) {
-        if (type.indexOf(disallowed_types[i]) !== -1) return '';
-      }
 
-      if (localStorage['h264ify-block_60fps'] === 'true') {
-        var match = /framerate=(\d+)/.exec(type);
-        if (match && match[1] > 30) return '';
+      if (localStorage['h265ify-log_req'] === 'true')
+        console.log('type: '+ type);
+
+      var overriddentypes = ['hevc', 'x265', 'h265', 'hvc', 'hev'];
+
+      for (var i = 0; i < overriddentypes.length; i++) {
+        if (type.indexOf(overriddentypes[i]) !== -1) return 'probably';
       }
 
       // Otherwise, ask the browser
       return origChecker(type);
     };
   }
+    override();
 }
 
