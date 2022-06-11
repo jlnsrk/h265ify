@@ -1,19 +1,31 @@
 <meta property="og:image"
     content="https://raw.githubusercontent.com/erkserkserks/h264ify/master/icons/icon128.png"/>
 
-# h265ify
+# h264ify
+
+
+![](https://raw.githubusercontent.com/erkserkserks/h264ify/master/noncode/yt_screenshot.png)
 
 # About
-Is an Microsoft Edge(C) extension which allows users to actually use the already present support for h265/hevc. Microsoft Edge(C) already
-has builtin support for hevc but doesn't report it to websites which in turn results in hevc videos not being played. Especially with
-webbased mediacenters such as plex or emby this will lead to unnecesary transcoding.
+h264ify is a Chrome/Firefox extension that makes YouTube stream H.264 videos instead of VP8/VP9 videos.
+
+Try h264ify if YouTube videos stutter, take up too much CPU, eat battery life, or make your laptop hot.
+
+By default, YouTube streams VP8/VP9 encoded video. However, this can cause problems with less powerful machines because VP8/VP9 is not typically hardware accelerated.
+
+In contrast, H.264 is commonly hardware accelerated by GPUs, which usually means smoother video playback and reduced CPU usage.
 
 # Requirements
-Microsoft Edge
-HEVC Codec pack from Microsoft Store(C)( https://www.microsoft.com/en-us/p/hevc-video-extensions-from-device-manufacturer/9n4wgh0z6vhq )
+Google Chrome
+
+Looking for the Firefox version? See: https://github.com/erkserkserks/h264ify-firefox
 
 # Installation
-Install like you would any other extension
+Install from here: https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
 
-# Remarks
-h265ify is based on the work of https://github.com/erkserkserks
+Note: [You may need to enable GPU acceleration as well] (http://www.webupd8.org/2014/01/enable-hardware-acceleration-in-chrome.html)
+
+If all goes well, when you visit https://www.youtube.com/html5, you should see this:
+![](https://github.com/erkserkserks/h264ify/blob/master/noncode/html5_video_support.png)
+
+

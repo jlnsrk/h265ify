@@ -1,5 +1,5 @@
 {
-  "name": "h265ify",
+  "name": "h264ify",
   "version": "1.1.0",
   "manifest_version": 2,
   "description": "__MSG_extensionDescription__",
@@ -15,16 +15,15 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     },
-    "default_title": "h265ify",
+    "default_title": "h264ify",
     "default_popup": "options.html"
   },
   "content_scripts": [
     {
       "matches": [
-        "https://*/*",
-        "http://*/*",
-        "file://*/*",
-        "*://10.0.0.144/*"
+        "*://*.youtube.com/*",
+        "*://*.youtube-nocookie.com/*",
+        "*://*.youtu.be/*"
       ],
       "js": [
         "src/inject/inject.js",
